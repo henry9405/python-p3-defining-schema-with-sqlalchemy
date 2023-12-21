@@ -1,12 +1,12 @@
+# lib/sqlalchemy_sandbox.py
+
 #!/usr/bin/env python3
 
-from sqlalchemy import Column, Integer, String, create_engine
-from sqlalchemy.ext.declarative import declarative_base
+# imports
+from sqlalchemy import create_engine
 
-Base = declarative_base()
-
-class Student(Base):
-    pass
+# data models
 
 if __name__ == '__main__':
-    pass
+    engine = create_engine('sqlite:///students.db')
+    Base.metadata.create_all(engine)
